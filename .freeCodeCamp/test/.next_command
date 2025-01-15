@@ -1,2 +1,3 @@
 ./bike-shop
 ./bike-shop.sh
+psql -U freecodecamp -d bikes
