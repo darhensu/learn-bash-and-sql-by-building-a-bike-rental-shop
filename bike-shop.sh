@@ -67,12 +67,23 @@ RENT_MENU() {
         # if customer doesn't exist
         if [[ -z $CUSTOMER_NAME ]]
         then
-        # get new customer name
-        echo -e "\nWhat's your name?"
-        read CUSTOMER_NAME
-        # insert new customer
-        INSERT_CUSTOMER_RESULT=$($PSQL "insert into customers(name, phone) values('$CUSTOMER_NAME', '$PHONE_NUMBER')")
+          # get new customer name
+          echo -e "\nWhat's your name?"
+          read CUSTOMER_NAME
+
+          # insert new customer
+          INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES('$CUSTOMER_NAME', '$PHONE_NUMBER')") 
         fi
+
+        # get customer_id
+
+        # insert bike rental
+
+        # set bike availability to false
+
+        # get bike info
+
+        # send to main menu
       fi
     fi
   fi
