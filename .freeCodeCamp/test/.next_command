@@ -267,3 +267,7 @@ echo "$(echo ' M e '| sed 's/^ *| *$//g')."
 echo "$(echo -E ' M e '| sed 's/^ *| *$//g')."
 echo "$(echo ' M e '| sed -E 's/^ *| *$//g')."
 __vsc_prompt_cmd_original
+$(echo $CUSTOMER_NAME | sed -r 's/^ *| *$//g')
+$(echo $CUSTOMER_NAME | sed -r 's/^ *| *$//g')
+__vsc_prompt_cmd_original
+git add .
