@@ -76,14 +76,17 @@ RENT_MENU() {
         fi
 
         # get customer_id
-        CUSTOMER_ID=$($PSQL "select customer_id from customers where phone = '$PHONE_NUMBER'")
-        # insert bike rental
-        INSERT_RENTAL_RESULT=$($PSQL "insert into rentals(customer_id, bike_id) values('$CUSTOMER_ID', '$BIKE_ID_TO_RENT')")
-        # set bike availability to false
+        CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone='$PHONE_NUMBER'")
 
+        # insert bike rental
+        INSERT_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES($CUSTOMER_ID, $BIKE_ID_TO_RENT)")
+
+        # set bike availability to false
+        SET_TO_FALSE_RESULT=$($PSQL "update bikes set available=False where bike_id=$BIKE_ID_TO_RENT")
         # get bike info
 
         # send to main menu
+
       fi
     fi
   fi
